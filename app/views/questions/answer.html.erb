@@ -1,0 +1,33 @@
+<div class="card border-secondary mb-3" style="max-width: 18rem;">
+  <div class="card-header">You</div>
+  <div class="card-body text-secondary">
+    <p class="card-text"><%= params[:question] %></p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="card border-warning mb-3" style="max-width: 18rem;">
+  <div class="card-header">Your coach</div>
+  <div class="card-body">
+    <p class="card-text">
+
+ <% if params[:question] == 'I am going to work' %>
+     <%= @answer[0] %>
+ <% elsif params[:question].include?('?') %>
+    <%=  @answer[1] %>
+  <%  else %>
+   <%= @answer[2] %>
+    <%end%>
+
+    </p>
+  </div>
+</div>
+
+
+<%= link_to "Ask a new question", ask_path%>
